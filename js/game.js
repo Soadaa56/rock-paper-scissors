@@ -26,3 +26,63 @@ function getUserPick() {
     userPick = prompt("Pick 1 for Rock, 2 for Paper, and 3 for Scissor", "");
     userPick = parseInt(userPick);
 }
+
+function getOutcome () {
+    if (cpuPick === 1) {
+        switch (userPick) {
+            case 1:
+                console.log("You tied, try again");
+                cpuRandom();
+                getUserPick();
+                break;
+            case 2:
+                console.log("You won this round");
+                cpuRandom;
+                getUserPick();
+                break;
+            case 3:
+                console.log("The computer wins this round :(");
+                cpuRandom;
+                getUserPick;
+                break;
+        }
+    } else if (cpuPick === 2) {
+        switch (userPick) {
+            case 1:
+                console.log("The computer wins this round :(");
+                cpuRandom;
+                getUserPick;
+                break;
+            case 2:
+                console.log("You tied, try again");
+                cpuRandom();
+                getUserPick();
+                break;
+            case 3:
+                console.log("You won this round");
+                cpuRandom;
+                getUserPick();
+                break;
+        }
+    } else if (cpuPick === 3) {
+        switch (userPick) {
+            case 1:
+                console.log("You won this round");
+                cpuRandom;
+                getUserPick();
+                break;
+            case 2:
+                console.log("The computer wins this round :(");
+                cpuRandom;
+                getUserPick;
+                break;
+            case 3:
+                console.log("You tied, try again");
+                cpuRandom();
+                getUserPick();
+                break;
+        }
+    } else {
+        console.log("bug")
+    }
+}
