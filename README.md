@@ -1,0 +1,1 @@
+ This will start as a simple rock, paper, scissors game to be played in the dev console of the webpage. I will eventually comeback to this project to incorporate it into the webpage with buttons. The goal is start and finish my first JavaScript project on my own (along with practicing git commits and messages).
