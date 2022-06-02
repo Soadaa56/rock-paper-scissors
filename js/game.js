@@ -37,21 +37,21 @@ function getOutcome () {
                 break;
             case 2:
                 console.log("You won this round");
-                cpuRandom;
+                cpuRandom();
                 getUserPick();
                 break;
             case 3:
                 console.log("The computer wins this round :(");
-                cpuRandom;
-                getUserPick;
+                cpuRandom();
+                getUserPick();
                 break;
         }
     } else if (cpuPick === 2) {
         switch (userPick) {
             case 1:
                 console.log("The computer wins this round :(");
-                cpuRandom;
-                getUserPick;
+                cpuRandom();
+                getUserPick();
                 break;
             case 2:
                 console.log("You tied, try again");
@@ -60,7 +60,7 @@ function getOutcome () {
                 break;
             case 3:
                 console.log("You won this round");
-                cpuRandom;
+                cpuRandom();
                 getUserPick();
                 break;
         }
@@ -68,13 +68,13 @@ function getOutcome () {
         switch (userPick) {
             case 1:
                 console.log("You won this round");
-                cpuRandom;
+                cpuRandom();
                 getUserPick();
                 break;
             case 2:
                 console.log("The computer wins this round :(");
-                cpuRandom;
-                getUserPick;
+                cpuRandom();
+                getUserPick();
                 break;
             case 3:
                 console.log("You tied, try again");
@@ -86,3 +86,6 @@ function getOutcome () {
         console.log("bug")
     }
 }
+
+cpuRandom();
+getUserPick();
