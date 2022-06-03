@@ -51,13 +51,17 @@ function getOutcome () {
                 break;
             case 2:
                 console.log("You won this round");
+                win();
                 cpuRandom();
                 getUserPick();
+                getOutcome();
                 break;
             case 3:
                 console.log("The computer wins this round :(");
+                lose();
                 cpuRandom();
                 getUserPick();
+                getOutcome();
                 break;
         }
     } else if (cpuPick === 2) {
@@ -65,8 +69,10 @@ function getOutcome () {
         switch (userPick) {
             case 1:
                 console.log("The computer wins this round :(");
+                lose();
                 cpuRandom();
                 getUserPick();
+                getOutcome();
                 break;
             case 2:
                 console.log("You tied, try again");
@@ -77,8 +83,10 @@ function getOutcome () {
                 break;
             case 3:
                 console.log("You won this round");
+                win();
                 cpuRandom();
                 getUserPick();
+                getOutcome();
                 break;
         }
     } else if (cpuPick === 3) {
@@ -86,13 +94,17 @@ function getOutcome () {
         switch (userPick) {
             case 1:
                 console.log("You won this round");
+                win();
                 cpuRandom();
                 getUserPick();
+                getOutcome();
                 break;
             case 2:
                 console.log("The computer wins this round :(");
+                lose();
                 cpuRandom();
                 getUserPick();
+                getOutcome();
                 break;
             case 3:
                 console.log("You tied, try again");
@@ -109,9 +121,11 @@ function getOutcome () {
 
 //Functions to keep score
 function win() {
-
+    userScore += userScore;
+    console.log(score);
 }
 
 function lose() {
-
+    cpuScore += cpuScore;
+    console.log(score);
 }
