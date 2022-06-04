@@ -25,7 +25,8 @@ function playRound() {
                 result = console.log("You won! " + playerSelection + " beats " + computerSelection +
                 ". Player score: " + playerScore + "; Computer score: " + computerScore);
                 if (playerScore == 3) {
-                    result += "You won the game with 3 victory points total!"
+                    result += "You won the game with 3 victory points total!";
+                    gameOver();
                 }
               }
     else {
@@ -33,7 +34,8 @@ function playRound() {
             result = console.log("You lose! " + playerSelection + " loses to " + computerSelection +
             ". Player score: " + playerScore + "; Computer score: " + computerScore);
             if (computerScore == 3) {
-                result += "The computer acquired 3 victory points and took over the world :/"
+                result += "The computer acquired 3 victory points and took over the world :/";
+                gameOver();
             }
     }
 }
@@ -47,3 +49,14 @@ const computerSelection = computerPlay();
 function playerPick() {
     playerSelection = prompt("Pick 'rock', 'paper', or 'scissor'").toLowerCase();
 }
+
+// game() will call playRound() function until a winner is declared. The playRound() should end the function when either player receives 
+// 3 points. "The Odin Project" is asking for a game() function to use a loop to count rounds. A loop would work if I only wanted a certain 
+// amount of rounds to play out, but I don't want a tie to occur. Is there a way for the loop add to both the round count but also rounds 
+// needed to end the loop so that a tie doesn't occur and only ends once a player is up to 3 points? 
+
+// In the mean time, game() will be tied to a button on the webpage to call playerRound() and continue until gameOver() is called.
+
+document.getElementById("startGame").onclick = console.log("test") & console.log("test:");
+
+    
