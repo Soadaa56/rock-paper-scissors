@@ -31,6 +31,9 @@ function playRound(playerSelection) {
             computerScore += 1;
             result = console.log("You lose! " + playerSelection + " loses to " + computerSelection +
             ". Player score: " + playerScore + "; Computer score: " + computerScore);
+            if (computerScore == 3) {
+                result += "The computer acquired 3 victory points and took over the world :/"
+            }
     }
 }
     
