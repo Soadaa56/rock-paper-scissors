@@ -17,7 +17,7 @@ function cpuRandom() {
     } else if (cpuPick >= 1) {
         cpuPick = 1;
     } else {
-        console.log("bug")
+        console.log("cpuRandom.bug")
     }
 }
 
@@ -113,7 +113,7 @@ function getOutcome () {
                 break;
         }
     } else {
-        console.log("getOutcome() bug")
+        console.log("getOutcome.bug")
     }
 }
 
