@@ -9,7 +9,8 @@ function computerPlay() {
 }
 
 // compare computerSelection to playerSelection
-function playRound(playerSelection) {
+function playRound() {
+    playerPick();
     let computerSelection = computerPlay();
     let result = ""
 
@@ -38,6 +39,11 @@ function playRound(playerSelection) {
 }
     
 
-const playerSelection = "";
+let playerSelection;
 const computerSelection = computerPlay();
 console.log(playRound(playerSelection, computerSelection));
+
+//Function to ask for player input and lowercase the input  
+function playerPick() {
+    playerSelection = prompt("Pick 'rock', 'paper', or 'scissor'").toLowerCase();
+}
