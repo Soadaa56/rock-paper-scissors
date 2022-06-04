@@ -39,9 +39,10 @@ getOutcome();
 
 
 //function to run getOutcome() until score of either side is equal 3
-while (userScore <3 && cpuScore <3) {
-    getOutcome();
+do {
+    getOutcome() 
 }
+while (userScore <3 && cpuScore <3);
 
 // if function to see which symbol cpu picked, each with their
 // own switch function to make decisions based on userPick.
@@ -58,14 +59,10 @@ function getOutcome () {
             case 2:
                 console.log("You picked paper and won this round");
                 win();
-                cpuRandom();
-                getUserPick();
                 break;
             case 3:
                 console.log("You picked scissors and lost to the computer this round :(");
                 lose();
-                cpuRandom();
-                getUserPick();
                 break;
         }
     } else if (cpuPick === 2) {
@@ -74,8 +71,6 @@ function getOutcome () {
             case 1:
                 console.log("You picked rock and lost to the computer this round :(");
                 lose();
-                cpuRandom();
-                getUserPick();
                 break;
             case 2:
                 console.log("You picked paper and tied, try again");
@@ -86,8 +81,6 @@ function getOutcome () {
             case 3:
                 console.log("You picked scissor and won this round");
                 win();
-                cpuRandom();
-                getUserPick();
                 break;
         }
     } else if (cpuPick === 3) {
@@ -96,14 +89,10 @@ function getOutcome () {
             case 1:
                 console.log("You picked rock and won this round");
                 win();
-                cpuRandom();
-                getUserPick();
                 break;
             case 2:
                 console.log("You picked paper and lost to the computer this round :(");
                 lose();
-                cpuRandom();
-                getUserPick();
                 break;
             case 3:
                 console.log("You picked scissor and tied, try again");
@@ -117,13 +106,36 @@ function getOutcome () {
     }
 }
 
-//Functions to keep score
+//Functions to keep score and check if game over, if not reset 
+// cpuRandom and get another input from user.
 function win() {
     ++userScore;
-    score();
+    if (userScore === 3) {
+        gameOverWin();
+    } else {
+        score();
+        cpuRandom();
+        getUserPick();
+    }
+}
+function lose() {
+    ++cpuScore
+    if (cpuScore === 3) {
+        gameOverLose();
+    } else {
+        score();
+        cpuRandom();
+        getUserPick();
+    }
 }
 
-function lose() {
-    ++cpuScore;
+//What to do when the game is over at 3 points for either side
+function gameOverWin() {
     score();
+    console.log("You beat the computer!");
+}
+
+function gameOverLose() {
+    score();
+    console.log("The computer won and took over the world");
 }
