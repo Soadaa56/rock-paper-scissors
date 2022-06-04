@@ -41,7 +41,7 @@ function playRound() {
 
 let playerSelection;
 const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+// console.log(playRound(playerSelection, computerSelection));
 
 //Function to ask for player input and lowercase the input  
 function playerPick() {
