@@ -25,8 +25,8 @@ function playRound() {
                 result = console.log("You won! " + playerSelection + " beats " + computerSelection +
                 ". Player score: " + playerScore + "; Computer score: " + computerScore);
                 if (playerScore == 3) {
-                    result += "You won the game with 3 victory points total!";
-                    gameOver();
+                    result = "You won the game with 3 victory points total!";
+                    // gameCheck();
                 }
               }
     else {
@@ -34,12 +34,12 @@ function playRound() {
             result = console.log("You lose! " + playerSelection + " loses to " + computerSelection +
             ". Player score: " + playerScore + "; Computer score: " + computerScore);
             if (computerScore == 3) {
-                result += "The computer acquired 3 victory points and took over the world :/";
-                gameOver();
+                result = "The computer acquired 3 victory points and took over the world :/";
+                // gameCheck();
             }
     }
 }
-    
+
 
 let playerSelection;
 const computerSelection = computerPlay();
@@ -55,8 +55,14 @@ function playerPick() {
 // amount of rounds to play out, but I don't want a tie to occur. Is there a way for the loop add to both the round count but also rounds 
 // needed to end the loop so that a tie doesn't occur and only ends once a player is up to 3 points? 
 
-// In the mean time, game() will be tied to a button on the webpage to call playerRound() and continue until gameOver() is called.
+// In the mean time, game() will be tied to a button ("startGame") to call playerRound() so that prompt() on webpage load isn't required to start
+// the game as it is incredibly annoying and blocks the console from being opened while prompt() is in focus, destroying the player experience since 
+// console cannot be opened to see the results
 
-document.getElementById("startGame").onclick = console.log("test") & console.log("test:");
+// I'm unsure how to make playerPick() only trigger from a button click
+
+function game(elem) {
+    var box = document.getElementById("startGame");
+}
 
     
