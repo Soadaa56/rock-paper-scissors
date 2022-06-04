@@ -29,12 +29,19 @@ function getUserPick() {
 
 let userScore = 0;
 let cpuScore = 0;
-let score = `You are at ${userScore} points while cpu is at ${cpuScore}`
-
+function score() {
+    console.log(`You are at ${userScore} points while cpu is at ${cpuScore}`)
+}
 // First run of functions to get symbols from each player
 cpuRandom();
 getUserPick();
 getOutcome();
+
+
+//function to run getOutcome() until score of either side is equal 3
+while (userScore <3 && cpuScore <3) {
+    getOutcome();
+}
 
 // if function to see which symbol cpu picked, each with their
 // own switch function to make decisions based on userPick.
@@ -43,89 +50,80 @@ function getOutcome () {
         console.log("Cpu picked Rock");
         switch (userPick) {
             case 1:
-                console.log("You tied, try again");
-                console.log(score);
+                console.log("You picked rock and tied, try again");
+                score();
                 cpuRandom();
                 getUserPick();
-                getOutcome();
                 break;
             case 2:
-                console.log("You won this round");
+                console.log("You picked paper and won this round");
                 win();
                 cpuRandom();
                 getUserPick();
-                getOutcome();
                 break;
             case 3:
-                console.log("The computer wins this round :(");
+                console.log("You picked scissors and lost to the computer this round :(");
                 lose();
                 cpuRandom();
                 getUserPick();
-                getOutcome();
                 break;
         }
     } else if (cpuPick === 2) {
         console.log("Cpu picked Paper");
         switch (userPick) {
             case 1:
-                console.log("The computer wins this round :(");
+                console.log("You picked rock and lost to the computer this round :(");
                 lose();
                 cpuRandom();
                 getUserPick();
-                getOutcome();
                 break;
             case 2:
-                console.log("You tied, try again");
-                console.log(score);
+                console.log("You picked paper and tied, try again");
+                score();
                 cpuRandom();
                 getUserPick();
-                getOutcome();
                 break;
             case 3:
-                console.log("You won this round");
+                console.log("You picked scissor and won this round");
                 win();
                 cpuRandom();
                 getUserPick();
-                getOutcome();
                 break;
         }
     } else if (cpuPick === 3) {
         console.log("Cpu picked Scissor");
         switch (userPick) {
             case 1:
-                console.log("You won this round");
+                console.log("You picked rock and won this round");
                 win();
                 cpuRandom();
                 getUserPick();
-                getOutcome();
                 break;
             case 2:
-                console.log("The computer wins this round :(");
+                console.log("You picked paper and lost to the computer this round :(");
                 lose();
                 cpuRandom();
                 getUserPick();
-                getOutcome();
                 break;
             case 3:
-                console.log("You tied, try again");
-                console.log(score);
+                console.log("You picked scissor and tied, try again");
+                score();
                 cpuRandom();
                 getUserPick();
-                getOutcome();
                 break;
         }
     } else {
-        console.log("bug")
+        console.log("getOutcome() bug")
     }
 }
 
 //Functions to keep score
 function win() {
-    userScore += userScore;
-    console.log(score);
+    ++userScore;
+    score();
 }
 
 function lose() {
-    cpuScore += cpuScore;
-    console.log(score);
+    ++cpuScore;
+    score();
 }
