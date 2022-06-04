@@ -39,10 +39,8 @@ getOutcome();
 
 
 //function to run getOutcome() until score of either side is equal 3
-do {
-    getOutcome() 
-}
-while (userScore <3 && cpuScore <3);
+
+
 
 // if function to see which symbol cpu picked, each with their
 // own switch function to make decisions based on userPick.
@@ -52,9 +50,7 @@ function getOutcome () {
         switch (userPick) {
             case 1:
                 console.log("You picked rock and tied, try again");
-                score();
-                cpuRandom();
-                getUserPick();
+                tie();
                 break;
             case 2:
                 console.log("You picked paper and won this round");
@@ -74,9 +70,7 @@ function getOutcome () {
                 break;
             case 2:
                 console.log("You picked paper and tied, try again");
-                score();
-                cpuRandom();
-                getUserPick();
+                tie();
                 break;
             case 3:
                 console.log("You picked scissor and won this round");
@@ -96,9 +90,7 @@ function getOutcome () {
                 break;
             case 3:
                 console.log("You picked scissor and tied, try again");
-                score();
-                cpuRandom();
-                getUserPick();
+                tie();
                 break;
         }
     } else {
@@ -116,6 +108,7 @@ function win() {
         score();
         cpuRandom();
         getUserPick();
+        getOutcome();
     }
 }
 function lose() {
@@ -126,7 +119,14 @@ function lose() {
         score();
         cpuRandom();
         getUserPick();
+        getOutcome();
     }
+}
+function tie() {
+    score();
+    cpuRandom();
+    getUserPick();
+    getOutcome();
 }
 
 //What to do when the game is over at 3 points for either side
