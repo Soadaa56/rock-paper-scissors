@@ -24,21 +24,21 @@ function playRound() {
                 playerScore += 1;
                 result = console.log("You won! " + playerSelection + " beats " + computerSelection +
                 ". Player score: " + playerScore + "; Computer score: " + computerScore);
-                if (playerScore == 3) {
-                    result = "You won the game with 3 victory points total!";
+                // if (playerScore == 3) {
+                //     result = "You won the game with 3 victory points total!";
                     // gameCheck();
                 }
-              }
+              
     else {
             computerScore += 1;
             result = console.log("You lose! " + playerSelection + " loses to " + computerSelection +
             ". Player score: " + playerScore + "; Computer score: " + computerScore);
-            if (computerScore == 3) {
-                result = "The computer acquired 3 victory points and took over the world :/";
+            // if (computerScore == 3) {
+            //     result = "The computer acquired 3 victory points and took over the world :/";
                 // gameCheck();
             }
-    }
 }
+
 
 
 let playerSelection;
@@ -61,8 +61,13 @@ function playerPick() {
 
 // I'm unsure how to make playerPick() only trigger from a button click
 
-function game(elem) {
-    var box = document.getElementById("startGame");
+function playGame() {
+    if (playerScore === 3) {
+        console.log("You beat the computer with 3 points!");
+    }
+   else if (computerScore === 3) {
+        console.log("The computer beat you with 3 points");
+}   else {
+    playRound();
 }
-
-    
+}
