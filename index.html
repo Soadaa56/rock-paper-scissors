@@ -2,44 +2,19 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>JS for noobs</title>
-  <style>
-    html {
-      font-size: 2em;
-      margin: 10px 5px 0;
-      color:blueviolet;
-      background-color: powderblue;
-    }
-
-    h1 {
-        text-decoration: underline;
-    }
-
-    button {
-        font-size: 40px;
-        color: blueviolet;
-        margin: 20px 5px;
-        background-color: powderblue;
-        border: 5px dotted blueviolet;
-    }
-  </style>
+  <title>Rock-Paper-Scissor</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./js/game_2.js" defer></script>
 </head>
 <body>
     <h1>Rock, Paper, Scissors!</h1>
-
-    <p>This webpage is for a simple rock, paper, scissors game that is played with the buttons below.</p>
-    <p style="font-weight: 700;">*Under Construction; Please click the "Play!" button to start the game in the console*</p>
-    <button onclick="playGame()" class="start.game">Play!</button>
-    <p>1 for Rock, 2 for Paper, 3 for Scissor</p>
-    <p class="game output">test text</p>
+    
+    <div id="choice">
     <button class="rock">Rock</button>
     <button class="paper">Paper</button>
     <button class="scissor">Scissor</button>
-    <p class="score">Score</p>
+    </div>
 
-    <p>*For now, this game will be played exclusively in the console.*</p>
-<script src="./js/game_2.js">
-
-</script>
+    <p class="score"></p>
 </body>
 </html>
