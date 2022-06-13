@@ -6,8 +6,16 @@ html {
 
   h1 {
       text-decoration: underline;
+      font-size: 50px;
+      text-align: center;
   }
 
   #choice {
     margin: 40px 20px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  button {
+    font-size: 40px;
   }
