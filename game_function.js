@@ -1,7 +1,5 @@
 "use strict"
 
-let playerScore = 0;
-let computerScore = 0;
 const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissor = document.getElementById('scissor');
@@ -9,15 +7,18 @@ const scissor = document.getElementById('scissor');
 let userPick;
 rock.addEventListener('click', () => {
     userPick = 'rock';
-    console.log(userPick);
+    cpuPick();
+    playRound();
 });
 paper.addEventListener('click', () => {
     userPick = 'paper';
-    console.log(userPick);
+    cpuPick();
+    playRound();
 });
 scissor.addEventListener('click', () => {
     userPick = 'scissor';
-    console.log(userPick);
+    cpuPick();
+    playRound();
 });
 
 function cpuPick() {
@@ -29,40 +30,60 @@ function playRound () {
     if (cpuPick === 'rock') {
         switch (userpick) {
             case 'paper':
-                //win
+                win();
                 break;
             case 'scissor':
-                //lose
+                lose();
                 break;
             case 'paper':
-                //tie
+                tie();
                 break;
         }
     } else if (cpuPick === 'paper') {
         switch (userPick) {
             case 'scissor':
-                //win
+                win();
                 break;
             case 'rock':
-                //lose
+                lose();
                 break;
             case 'paper':
-                //tie
+                win();
                 break;
         }
     } else if (cpuPick === 'scissor') {
         switch (userPick) {
             case 'rock':
-                //win
+                win();
                 break;
             case 'paper':
-                //lose
+                lose();
                 break;
             case 'scissor':
-                //tie
+                tie();
                 break;
         }
     } else {
         console.log('playRound logic bug');
     }
+}
+
+const userScore = document.querySelector("#score > p.userScore");
+const cpuScore = document.querySelector("#score > p.cpuScore");
+let playerScore = 0;
+let computerScore = 0;
+
+
+function win () {
+    playerScore++;
+    userScore.textContent += playerScore;
+}
+
+function lose () {
+    computerScore++;
+    cpuScore.textContent += computerScore;
+}
+
+function tie () {
+
 }
