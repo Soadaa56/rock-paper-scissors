@@ -5,29 +5,31 @@ const paper = document.getElementById('paper');
 const scissor = document.getElementById('scissor');
 
 let userPick;
+let cpuPick;
+
 rock.addEventListener('click', () => {
     userPick = 'rock';
-    cpuPick();
+    getCpuPick();
     playRound();
 });
 paper.addEventListener('click', () => {
     userPick = 'paper';
-    cpuPick();
+    getCpuPick();
     playRound();
 });
 scissor.addEventListener('click', () => {
     userPick = 'scissor';
-    cpuPick();
+    getCpuPick();
     playRound();
 });
 
-function cpuPick() {
+function getCpuPick() {
     let choices = ['rock', 'paper', 'scissor']
-    return choices [Math.floor(Math.random() * choices.length)]
+    cpuPick = choices[Math.floor(Math.random() * choices.length)]
 }
 
 function playRound () {
-    if (cpuPick === 'rock') {
+    if (cpuPick == 'rock') {
         switch (userpick) {
             case 'paper':
                 win();
@@ -39,7 +41,7 @@ function playRound () {
                 tie();
                 break;
         }
-    } else if (cpuPick === 'paper') {
+    } else if (cpuPick == 'paper') {
         switch (userPick) {
             case 'scissor':
                 win();
@@ -51,7 +53,7 @@ function playRound () {
                 win();
                 break;
         }
-    } else if (cpuPick === 'scissor') {
+    } else if (cpuPick == 'scissor') {
         switch (userPick) {
             case 'rock':
                 win();
@@ -68,8 +70,8 @@ function playRound () {
     }
 }
 
-const userScore = document.querySelector("#score > p.userScore");
-const cpuScore = document.querySelector("#score > p.cpuScore");
+const userScore = document.querySelector("#score > p:nth-child(1) > span");
+const cpuScore = document.querySelector("#score > p:nth-child(2) > span");
 let playerScore = 0;
 let computerScore = 0;
 
