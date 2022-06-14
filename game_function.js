@@ -28,29 +28,29 @@ function cpuPick() {
 function playRound () {
     if (cpuPick === 'rock') {
         switch (userpick) {
-            case 1:
+            case 'paper':
                 //win
-            case 2:
+            case 'scissor':
                 //lose
-            case 3:
+            case 'paper':
                 //tie
         }
     } else if (cpuPick === 'paper') {
         switch (userPick) {
-            case 1:
+            case 'scissor':
                 //win
-            case 2:
+            case 'rock':
                 //lose
-            case 3:
+            case 'paper':
                 //tie
         }
     } else if (cpuPick === 'scissor') {
         switch (userPick) {
-            case 1:
+            case 'rock':
                 //win
-            case 2:
+            case 'paper':
                 //lose
-            case 3:
+            case 'scissor':
                 //tie
         }
     } else {
