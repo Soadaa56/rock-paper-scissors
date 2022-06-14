@@ -6,9 +6,19 @@ const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissor = document.getElementById('scissor');
 
-rock.addEventListener('click', userPick);
-paper.addEventListener('click', userPick);
-scissor.addEventListener('click', userPick);
+let userPick;
+rock.addEventListener('click', () => {
+    userPick = 'rock';
+    console.log(userPick);
+});
+paper.addEventListener('click', () => {
+    userPick = 'paper';
+    console.log(userPick);
+});
+scissor.addEventListener('click', () => {
+    userPick = 'scissor';
+    console.log(userPick);
+});
 
 function cpuPick() {
     let choices = ['rock', 'paper', 'scissor']
