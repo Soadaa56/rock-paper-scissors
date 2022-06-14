@@ -2,18 +2,17 @@
 
 let playerScore = 0;
 let computerScore = 0;
+const rock = document.getElementById('rock');
+const paper = document.getElementById('paper');
+const scissor = document.getElementById('scissor');
+
+rock.addEventListener('click', userPick);
+paper.addEventListener('click', userPick);
+scissor.addEventListener('click', userPick);
 
 function cpuPick() {
     let choices = ['rock', 'paper', 'scissor']
     return choices [Math.floor(Math.random() * choices.length)]
-}
-
-function userPick() {
-    const rock = document.querySelector('.rock');
-    const paper = document.querySelector('.paper');
-    const scissor = document.querySelector('.scissor');
-    
-    
 }
 
 function playRound () {
