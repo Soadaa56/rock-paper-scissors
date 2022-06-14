@@ -30,7 +30,7 @@ function getCpuPick() {
 
 function playRound () {
     if (cpuPick == 'rock') {
-        switch (userpick) {
+        switch (userPick) {
             case 'paper':
                 win();
                 break;
@@ -78,12 +78,12 @@ let computerScore = 0;
 
 function win () {
     playerScore++;
-    userScore.textContent += playerScore;
+    userScore.textContent = playerScore;
 }
 
 function lose () {
     computerScore++;
-    cpuScore.textContent += computerScore;
+    cpuScore.textContent = computerScore;
 }
 
 function tie () {
