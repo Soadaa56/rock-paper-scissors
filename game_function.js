@@ -30,28 +30,37 @@ function playRound () {
         switch (userpick) {
             case 'paper':
                 //win
+                break;
             case 'scissor':
                 //lose
+                break;
             case 'paper':
                 //tie
+                break;
         }
     } else if (cpuPick === 'paper') {
         switch (userPick) {
             case 'scissor':
                 //win
+                break;
             case 'rock':
                 //lose
+                break;
             case 'paper':
                 //tie
+                break;
         }
     } else if (cpuPick === 'scissor') {
         switch (userPick) {
             case 'rock':
                 //win
+                break;
             case 'paper':
                 //lose
+                break;
             case 'scissor':
                 //tie
+                break;
         }
     } else {
         console.log('playRound logic bug');
