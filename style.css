@@ -1,21 +1,30 @@
 html {
-    font-size: 1.25em;
-    margin: 10px 5px 0;
-    background-color: grey;
-  }
+  font-size: 1.25em;
+  margin: 10px 5px 0;
+  background-color: grey;
+}
 
-  h1 {
-      text-decoration: underline;
-      font-size: 50px;
-      text-align: center;
-  }
+h1 {
+  text-decoration: underline;
+  font-size: 50px;
+  text-align: center;
+}
 
-  #choice {
-    margin: 40px 20px;
-    display: flex;
-    justify-content: space-around;
-  }
+#choice {
+  margin: 40px 20px;
+  display: flex;
+  justify-content: space-around;
+}
 
-  button {
-    font-size: 40px;
-  }
+button {
+  font-size: 40px;
+  padding: 5px;
+}
+
+#rock img {
+  height: 200px;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+    
