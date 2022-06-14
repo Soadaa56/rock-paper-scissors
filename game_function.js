@@ -74,18 +74,26 @@ const userScore = document.querySelector("#score > p:nth-child(1) > span");
 const cpuScore = document.querySelector("#score > p:nth-child(2) > span");
 let playerScore = 0;
 let computerScore = 0;
+const outcome = document.querySelector('#outcome');
+const p = document.createElement('p');
 
+p.textContent = 'hi';
 
 function win () {
     playerScore++;
+    p.textContent = `${userPick} beats ${cpuPick}`;
+    outcome.append(p);
     userScore.textContent = playerScore;
 }
 
 function lose () {
     computerScore++;
+    p.textContent = `${userPick} loses to ${cpuPick}`;
+    outcome.append(p);
     cpuScore.textContent = computerScore;
 }
 
 function tie () {
-
+    p.textContent = `${userPick} ties to ${cpuPick}`;
+    outcome.append(p);
 }
