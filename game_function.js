@@ -37,7 +37,7 @@ function playRound () {
             case 'scissor':
                 lose();
                 break;
-            case 'paper':
+            case 'rock':
                 tie();
                 break;
         }
@@ -50,7 +50,7 @@ function playRound () {
                 lose();
                 break;
             case 'paper':
-                win();
+                tie();
                 break;
         }
     } else if (cpuPick == 'scissor') {
@@ -76,6 +76,7 @@ let playerScore = 0;
 let computerScore = 0;
 const outcome = document.querySelector('#outcome');
 const p = document.createElement('p');
+const winner = document.querySelector('.winner');
 
 // Add to scores and show outcome
 function win () {
@@ -85,6 +86,9 @@ function win () {
     p.textContent = `${userPick} beats ${cpuPick}`;
     outcome.append(p);
     userScore.textContent = playerScore;
+    if (playerScore == 5) {
+        winner.textContent = 'You were the first to 5 points and won!';
+    }
 }
 
 function lose () {
@@ -94,6 +98,9 @@ function lose () {
     p.textContent = `${userPick} loses to ${cpuPick}`;
     outcome.append(p);
     cpuScore.textContent = computerScore;
+    if (computerScore == 5) {
+        winner.textContent = 'The computer got to 5 points and took over the world :(';
+    }
 }
 
 function tie () {
