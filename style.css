@@ -1,5 +1,5 @@
 html {
-  font-size: 1.25em;
+  font-size: 1.5em;
   margin: 10px 5px 0;
   background-color: grey;
 }
@@ -16,15 +16,32 @@ h1 {
   justify-content: space-around;
 }
 
-button {
+.btn {
   font-size: 40px;
   padding: 5px;
 }
 
-#rock img {
+.hover {
+  transform: (2);
+}
+
+.symbols {
   height: 200px;
   width: auto;
   margin-bottom: 10px;
+  background-color: grey;
 }
 
-    
+#container {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  width: 210px;
+  background-color: white;
+}
+
+#outcome {
+  text-align: center;
+  font-size: 35px;
+}
+
